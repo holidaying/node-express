@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery-tmpl</title>
+		<script type="text/javascript" src="./jquery.min.js"></script>
+		<script type="text/javascript" src="./jquery.tmpl.js"></script>
+	</head>
+	<style>
+		.left-box
+		{
+			float: left;
+			width: 50%;
+		}
+		.right-box
+		{
+			float: right;
+			width: 50%;
+		}
+		ul,li
+		{
+			overflow: hidden;
+			margin: 10px;
+			width: 100%;
+		}
+	</style>
+	<body>
+		<script type="text/x-jquery-tmpl" id="reuse">
+			<li>
+				<div class="left-box">
+				<p>${name}</p>
+				<p>${prize}￥</p>
+				</div>
+				<div class="right-box">点击</div>
+			</li>
+		</script>
+		<div>
+			<ul id="list">  
+				
+			</ul>
+		</div>
+	</body>
+	<script>
+	$(function() {
+		var list = [{name:"计算机科学",prize:11},{name:"JAVA",prize:55},{name:"CSS",prize:42}]
+		$( "#reuse" ).tmpl(list).appendTo("#list" );  
+	})
+	</script>
+</html>
